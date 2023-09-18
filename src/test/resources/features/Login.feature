@@ -34,17 +34,19 @@ Feature: Login Functionality
     And user clicks on the login button
     Then user lands on the main page
   @LUE-1447
-  Scenario: Verify "incorrect username or password" is displayed for invalid credentials
+  Scenario: Verify "correct username and incorrect password" is displayed for invalid credentials
     When user enters the invalid username
     And user enters the valid password
     And user clicks on the login button
     Then user can see incorrect username or password text
+
   @LUE-1447
-  Scenario: Verify "incorrect username or password" is displayed for invalid credentials
+  Scenario: Verify "incorrect username and correct password" is displayed for invalid credentials
     When user enters the valid username
     And user enters the invalid password
     And user clicks on the login button
     Then user can see incorrect username or password text
+
   @LUE-1448
   Scenario: Verify "Please fill out this field" is displayed if the password or username is empty
     When user enters the Marketing username
