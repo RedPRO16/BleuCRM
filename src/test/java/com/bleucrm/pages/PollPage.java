@@ -22,7 +22,7 @@ public class PollPage {
 
 
 
-    @FindBy(xpath="//body[@contenteditable='true']")
+    @FindBy(xpath = "//div[@id='bx-html-editor-iframe-cnt-idPostFormLHE_blogPostForm']//iframe[@class='bx-editor-iframe']")
     public WebElement Title;
 
     @FindBy(xpath = "//*[@id='bx-destination-tag']")

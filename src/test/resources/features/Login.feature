@@ -1,3 +1,4 @@
+@ahmet
 Feature: Login Functionality
   User Story:
   1-Users should be able to log in with valid credentials and should land on the home page after successful login.
@@ -33,21 +34,19 @@ Feature: Login Functionality
     And user enters the Helpdesk password
     And user clicks on the login button
     Then user lands on the main page
-  @LUE-1447
-  Scenario: Verify "correct username and incorrect password" is displayed for invalid credentials
+  @LUE-1447 @failed
+  Scenario: Verify "incorrect username or password" is displayed for invalid credentials
     When user enters the invalid username
     And user enters the valid password
     And user clicks on the login button
     Then user can see incorrect username or password text
-
-  @LUE-1447
-  Scenario: Verify "incorrect username and correct password" is displayed for invalid credentials
+  @LUE-1447 @failed
+  Scenario: Verify "incorrect username or password" is displayed for invalid credentials
     When user enters the valid username
     And user enters the invalid password
     And user clicks on the login button
     Then user can see incorrect username or password text
-
-  @LUE-1448
+  @LUE-1448 @failed
   Scenario: Verify "Please fill out this field" is displayed if the password or username is empty
     When user enters the Marketing username
     And user do not enter the password

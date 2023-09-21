@@ -14,7 +14,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/bleucrm/StepDefinitions",
         dryRun = false,
-        tags = ""
+        tags = "@ahmet and not @failed"
+
 )
 public class CukesRunner {
 }

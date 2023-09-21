@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import java.awt.*;
@@ -14,6 +15,7 @@ import java.awt.*;
 public class PollStepDefinitions {
 
     PollPage pollPage = new PollPage();
+    Actions actions = new Actions(Driver.getDriver());
 
     @When("user click POLL tab under active stream page")
     public void user_click_poll_tab_under_active_stream_page() {
@@ -21,21 +23,17 @@ public class PollStepDefinitions {
         pollPage.PollTab.click();
     }
 
-//    @When("user type a poll title")
-//    public void user_type_a_poll_title() {
-//        BrowserUtils.waitFor(5);
-//        Driver.getDriver().switchTo().frame(pollPage.iFrame);
-//
-//        pollPage.iFrame.sendKeys("PollTitle");
-//
-//        Driver.getDriver().switchTo().defaultContent();
-//
-//    }
+    @When("user type a poll title")
+    public void user_type_a_poll_title() {
+        BrowserUtils.waitFor(2);
+        actions.click(pollPage.Title).perform();
+        BrowserUtils.waitFor(5);
+        pollPage.Title.sendKeys("Sample Title");
+    }
 
     @When("user click Add more btn on To field")
     public void user_click_add_more_btn_on_to_field() {
         pollPage.AddMoreBtn.click();
-
     }
 
     @Then("user by selecting multiple contacts from Employees and Department's contact lists.")
