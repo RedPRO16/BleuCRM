@@ -3,6 +3,7 @@ package com.bleucrm.StepDefinitions;
 import com.bleucrm.Utilities.BrowserUtils;
 import com.bleucrm.Utilities.Driver;
 import com.bleucrm.pages.PollPage;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -27,7 +28,9 @@ public class PollStepDefinitions {
     public void user_type_a_poll_title() {
         BrowserUtils.waitFor(2);
         Driver.getDriver().switchTo().frame(pollPage.iFrame);
-        pollPage.Title.sendKeys("Deneme");
+        BrowserUtils.waitFor(3);
+        Faker faker = new Faker();
+        pollPage.Title.sendKeys(faker.backToTheFuture().character());
        // actions.sendKeys(pollPage.Title,"Deneme").perform();
         BrowserUtils.waitFor(3);
         Driver.getDriver().switchTo().defaultContent();
@@ -77,6 +80,7 @@ public class PollStepDefinitions {
     @Then("click the SEND btn")
     public void click_the_send_btn() {
         pollPage.Send.click();
+        BrowserUtils.waitFor(3);
 
 
     }
@@ -84,9 +88,15 @@ public class PollStepDefinitions {
 
     @Then("user hover over answer box to delete by clicking on X and then confirm with OK on pop-up screen.")
     public void user_hover_over_answer_box_to_delete_by_clicking_on_x_and_then_confirm_with_ok_on_pop_up_screen() {
+        pollPage.editAnswer.click();
+        BrowserUtils.waitFor(2);
+        actions.moveToElement(pollPage.labelDeleteQuestion).perform();
+        BrowserUtils.waitFor(1);
         pollPage.labelDeleteQuestion.click();
+        BrowserUtils.waitFor(3);
         Alert alert = Driver.getDriver().switchTo().alert();
-        alert.accept();
+        BrowserUtils.waitFor(1);
+        alert.dismiss();
     }
 
 
@@ -102,18 +112,23 @@ public class PollStepDefinitions {
         Alert alert = Driver.getDriver().switchTo().alert();
         alert.accept();
 
+
     }
 
 
     @When("user click on more button")
     public void user_click_on_more_button() {
-        pollPage.AddMoreBtn.click();
+
+        Driver.getDriver().get("https://qa.bleucrm.com/stream/");
+        pollPage.MoreBtn.click();
+        BrowserUtils.waitFor(3);
 
     }
 
     @When("user hover over mouse on edit option")
     public void user_hover_over_mouse_on_edit_option() {
         pollPage.Edit.click();
+        BrowserUtils.waitFor(3);
 
     }
 
