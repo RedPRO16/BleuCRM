@@ -96,7 +96,7 @@ public class PollStepDefinitions {
         BrowserUtils.waitFor(3);
         Alert alert = Driver.getDriver().switchTo().alert();
         BrowserUtils.waitFor(1);
-        alert.dismiss();
+        alert.accept();
     }
 
 
