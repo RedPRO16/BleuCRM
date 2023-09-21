@@ -27,7 +27,8 @@ public class PollStepDefinitions {
     public void user_type_a_poll_title() {
         BrowserUtils.waitFor(2);
         actions.click(pollPage.Title).perform();
-        BrowserUtils.waitFor(5);
+        BrowserUtils.waitFor(3);
+
         pollPage.Title.sendKeys("Sample Title");
     }
 
