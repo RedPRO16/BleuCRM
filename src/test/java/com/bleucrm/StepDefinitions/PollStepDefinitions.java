@@ -26,10 +26,11 @@ public class PollStepDefinitions {
     @When("user type a poll title")
     public void user_type_a_poll_title() {
         BrowserUtils.waitFor(2);
-        actions.click(pollPage.Title).perform();
+        Driver.getDriver().switchTo().frame(pollPage.iFrame);
+        pollPage.Title.sendKeys("Deneme");
+       // actions.sendKeys(pollPage.Title,"Deneme").perform();
         BrowserUtils.waitFor(3);
-
-        pollPage.Title.sendKeys("Sample Title");
+        Driver.getDriver().switchTo().defaultContent();
     }
 
     @When("user click Add more btn on To field")
@@ -40,9 +41,15 @@ public class PollStepDefinitions {
     @Then("user by selecting multiple contacts from Employees and Department's contact lists.")
     public void user_by_selecting_multiple_contacts_from_employees_and_department_s_contact_lists() {
         pollPage.EmployeeAndDepartments.click();
+        BrowserUtils.waitFor(1);
         pollPage.Employee_1.click();
+        BrowserUtils.waitFor(1);
         pollPage.Employee_2.click();
+        BrowserUtils.waitFor(1);
+        pollPage.Employee_3.click();
+        BrowserUtils.waitFor(1);
         pollPage.AddMorePopUPCloseIcon.click();
+        BrowserUtils.waitFor(1);
 
     }
 
@@ -50,15 +57,20 @@ public class PollStepDefinitions {
     @When("user click on question field and type question.")
     public void user_click_on_question_field_and_type_question() {
         pollPage.inputQuestion.sendKeys("Type a question");
+        BrowserUtils.waitFor(1);
 
 
     }
 
     @When("user click on answer fields and type multiple answers")
     public void user_click_on_answer_fields_and_type_multiple_answers() {
+        BrowserUtils.waitFor(1);
         pollPage.Answer1.sendKeys("Type answer1");
+        BrowserUtils.waitFor(1);
         pollPage.Answer2.sendKeys("Type answer2");
-
+        BrowserUtils.waitFor(1);
+        pollPage.Answer3.sendKeys("Type answer3");
+        BrowserUtils.waitFor(1);
 
     }
 

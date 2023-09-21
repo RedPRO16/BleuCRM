@@ -22,7 +22,7 @@ public class PollPage {
 
 
 
-    @FindBy(xpath = "//div[@id='bx-html-editor-iframe-cnt-idPostFormLHE_blogPostForm']//iframe[@class='bx-editor-iframe']")
+    @FindBy(xpath = "//body[contains(@style,'min-height: 184px;')]")
     public WebElement Title;
 
     @FindBy(xpath = "//*[@id='bx-destination-tag']")
@@ -31,11 +31,14 @@ public class PollPage {
     @FindBy(xpath = "//*[@id='question_0']")
     public WebElement inputQuestion;
 
-    @FindBy(xpath = "//li[@class='vote-block-inp-wrap'][.//*[@id='answer_0__0_']]")
+    @FindBy(xpath = "//input[contains(@id,'answer_0__0_')]")
     public WebElement Answer1;
 
-    @FindBy(xpath = "//li[@class='vote-block-inp-wrap'][.//*[@id='answer_0__1_']]")
+    @FindBy(xpath = "//input[contains(@id,'answer_0__1_')]")
     public WebElement Answer2;
+
+    @FindBy(xpath = "//input[contains(@id,'answer_0__2_')]")
+    public WebElement Answer3;
 
     @FindBy(id="multi_0")
     public WebElement ClickBoxMulti;
@@ -43,7 +46,7 @@ public class PollPage {
     @FindBy(xpath = "//*[@id='blog-submit-button-save']")
     public WebElement Send;
 
-    @FindBy(xpath = "//*[@id=\"destDepartmentTab_destination5410601\"]")
+    @FindBy(xpath = "//a[contains(@id,'destDepartmentTab_destination')]")
     public WebElement EmployeeAndDepartments;
 
     @FindBy(xpath = "//*[@id=\"bx-lm-category-relation-129\"]/a[3]/div[1]/div[1]")
@@ -51,6 +54,9 @@ public class PollPage {
 
     @FindBy(xpath = "//*[@id=\"bx-lm-category-relation-129\"]/a[23]/div[1]/div[1]")
     public WebElement Employee_2;
+
+    @FindBy(xpath = "//*[@id=\"bx-lm-category-relation-129\"]/a[22]/div[1]/div[1]")
+    public WebElement Employee_3;
 
     
     @FindBy(xpath = "//a[contains(@class, 'addq')]")
