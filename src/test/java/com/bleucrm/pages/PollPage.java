@@ -67,7 +67,7 @@ public class PollPage {
     public WebElement MoreBtn;
 
 
-    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[2]/td/div/div[2]/div/div/div[4]/div[2]/div[1]/div/div[1]/div[6]/div/a/span[1]")
+    @FindBy(xpath = "//div[@class='feed-item-wrap'][1]/div/div/div[6]/div[1]/a[1]/span[1]")
     public WebElement MoreBtn2;
 
     @FindBy(xpath = "//div[contains(@id,'popup-window-content-menu-popup-blog-post-')][1]/div[1]/div[1]/span[5]/span[2]")

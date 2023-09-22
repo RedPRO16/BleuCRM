@@ -16,7 +16,7 @@ Feature: Login Functionality
     And user enters the Marketing password
     And user clicks on the login button
     Then user lands on the main page
-
+  @LUE-1457
   Scenario: User should be able to add users by selecting multiple contacts from Employees and Department's contact lists.
 #  User should be able to add questions and multiple answers.
 #  User should be able to delete  multiple answers.

@@ -144,6 +144,7 @@ public class PollStepDefinitions {
     @Then("user click send button")
     public void user_click_send_button() {
         pollPage.Send.click();
+        BrowserUtils.waitFor(3);
 
     }
 
@@ -159,6 +160,7 @@ public class PollStepDefinitions {
 
     @When("user click on more button last time")
     public void userClickOnMoreButtonLastTime() {
+        BrowserUtils.waitFor(2);
         pollPage.MoreBtn2.click();
         BrowserUtils.waitFor(2);
 
