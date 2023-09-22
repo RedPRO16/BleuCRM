@@ -88,6 +88,7 @@ public class PollStepDefinitions {
 
     @Then("user hover over answer box to delete by clicking on X and then confirm with OK on pop-up screen.")
     public void user_hover_over_answer_box_to_delete_by_clicking_on_x_and_then_confirm_with_ok_on_pop_up_screen() {
+
         pollPage.editAnswer.click();
         BrowserUtils.waitFor(2);
         actions.moveToElement(pollPage.labelDeleteQuestion).perform();
@@ -100,17 +101,17 @@ public class PollStepDefinitions {
     }
 
 
-    @When("user hover over mouse on delete option")
-    public void user_hover_over_mouse_on_delete_option() {
+    @When("user hover over mouse on delete the poll")
+    public void user_hover_over_mouse_on_delete_the_poll() {
         pollPage.Delete.click();
+        Alert alert = Driver.getDriver().switchTo().alert();
+        alert.accept();
 
 
     }
 
     @Then("user confirm on pop screen by clicking on OK")
     public void user_confirm_on_pop_screen_by_clicking_on_ok() {
-        Alert alert = Driver.getDriver().switchTo().alert();
-        alert.accept();
 
 
     }
@@ -120,6 +121,7 @@ public class PollStepDefinitions {
     public void user_click_on_more_button() {
 
         Driver.getDriver().get("https://qa.bleucrm.com/stream/");
+        BrowserUtils.waitFor(3);
         pollPage.MoreBtn.click();
         BrowserUtils.waitFor(3);
 
@@ -152,6 +154,14 @@ public class PollStepDefinitions {
 
     @When("user must be filled up Mandatory fields; Message title, recipient,  a question,  two answers")
     public void userMustBeFilledUpMandatoryFieldsMessageTitleRecipientAQuestionTwoAnswers() {
+
+    }
+
+    @When("user click on more button last time")
+    public void userClickOnMoreButtonLastTime() {
+        pollPage.MoreBtn2.click();
+        BrowserUtils.waitFor(2);
+
 
     }
 }

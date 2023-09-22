@@ -40,15 +40,17 @@ Feature: Login Functionality
     Then user hover over answer box to delete by clicking on X and then confirm with OK on pop-up screen.
 
     When user click on more button
-    And user hover over mouse on delete option
-    Then user confirm on pop screen by clicking on OK
-
-    When user click on more button
     And user hover over mouse on edit option
     Then user can click Allow multiple choice checkbox and confirm with send button
 
     When user must be filled up Mandatory fields; Message title, recipient,  a question,  two answers
     Then user click send button
+
+    When user click on more button last time
+    And user hover over mouse on delete the poll
+    Then user confirm on pop screen by clicking on OK
+
+
 
 
 

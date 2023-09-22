@@ -41,7 +41,7 @@ public class PollPage {
     @FindBy(xpath = "//input[contains(@id,'answer_0__2_')]")
     public WebElement Answer3;
 
-    @FindBy(id = "multi_0")
+    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[2]/td/div/div[2]/div/div/div/div[2]/form/div[2]/div[1]/div/div/ol/li/div[2]/input")
     public WebElement ClickBoxMulti;
 
     @FindBy(xpath = "//*[@id='blog-submit-button-save']")
@@ -65,13 +65,15 @@ public class PollPage {
 
     @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table/tbody/tr[1]/td[2]/table/tbody/tr/td/div/div[2]/div/div[3]/div[2]/div[1]/div/div[1]/div[6]/div/a/span[1]")
     public WebElement MoreBtn;
-    //    @FindBy(xpath = "//*[@id='feed-post-more-2754']")
-//    public WebElement FeedPostMore;
 
-    @FindBy(xpath = "/html/body/div[4]/div[1]/div/div/span[5]/span[2]")
-    public WebElement Delete;
+
+    @FindBy(xpath = "/html/body/table/tbody/tr[2]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[2]/td/div/div[2]/div/div/div[4]/div[2]/div[1]/div/div[1]/div[6]/div/a/span[1]")
+    public WebElement MoreBtn2;
 
     @FindBy(xpath = "//div[contains(@id,'popup-window-content-menu-popup-blog-post-')][1]/div[1]/div[1]/span[5]/span[2]")
+    public WebElement Delete;
+
+    @FindBy(xpath = "//div[contains(@id,'popup-window-content-menu-popup-blog-post-')][1]/div[1]/div[1]/a[2]/span[2]")
     public WebElement Edit;
 
     @FindBy(css = "#votes-ac3ab09e1ab5bccbdfe6e02e0dec8cff > div > ol > li > ol > li:nth-child(1) > label")
