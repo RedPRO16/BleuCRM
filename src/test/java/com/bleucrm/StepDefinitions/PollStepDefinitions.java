@@ -90,7 +90,7 @@ public class PollStepDefinitions {
     public void user_hover_over_answer_box_to_delete_by_clicking_on_x_and_then_confirm_with_ok_on_pop_up_screen() {
 
         pollPage.editAnswer.click();
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitForVisibility(pollPage.labelDeleteQuestion,10);
         actions.moveToElement(pollPage.labelDeleteQuestion).perform();
         BrowserUtils.waitFor(1);
         pollPage.labelDeleteQuestion.click();
@@ -98,6 +98,7 @@ public class PollStepDefinitions {
         Alert alert = Driver.getDriver().switchTo().alert();
         BrowserUtils.waitFor(1);
         alert.accept();
+
     }
 
 
