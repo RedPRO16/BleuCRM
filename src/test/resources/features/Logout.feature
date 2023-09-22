@@ -1,3 +1,4 @@
+@murat
 Feature: Logout Functionality
   Acceptance Criteria:
 
