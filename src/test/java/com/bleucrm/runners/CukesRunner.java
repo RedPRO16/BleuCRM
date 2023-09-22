@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"},
         features = "src/test/resources/features",
         glue = "com/bleucrm/StepDefinitions",
-        dryRun = false,
+        dryRun = true,
         tags = ""
 )
 public class CukesRunner {
