@@ -4,7 +4,6 @@ package com.bleucrm.StepDefinitions;
 import com.bleucrm.Utilities.BrowserUtils;
 import com.bleucrm.Utilities.Driver;
 import com.bleucrm.pages.SendMessagePage;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -23,15 +22,16 @@ public class SendMessageDef {
         BrowserUtils.waitFor(2);
         sendMessagePage.messageButton.click();
         BrowserUtils.waitFor(2);
-
-        Driver.getDriver().switchTo().frame(sendMessagePage.iframe);
-        BrowserUtils.waitFor(2);
         
 
     }
     @When("user writes message to the message field")
     public void user_writes_message_to_the_message_field() {
+        Driver.getDriver().switchTo().frame(sendMessagePage.iframe);
+        BrowserUtils.waitFor(2);
         sendMessagePage.inputMessage.sendKeys("Message");
+        BrowserUtils.waitFor(2);
+        Driver.getDriver().switchTo().defaultContent();
         BrowserUtils.waitFor(2);
 
     }
