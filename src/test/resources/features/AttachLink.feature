@@ -7,7 +7,7 @@ Feature: User should be able to attach a link to the specified text.
     And user clicks on the login button
     And user clicks on the send messages button
     Then user lands on the main page
-
+@LUE-1524
   Scenario: User should be able to attach a link to the specified text.
     When user clicks on the link button
     And user types whatever he wants in the link text section
