@@ -9,7 +9,7 @@ Feature: User should be able to insert YouTube and Vimeo videos. User should be 
     And user clicks on the login button
     And user clicks on the send messages button
     Then user lands on the main page
-
+@LUE-1525
   Scenario: User should be able to insert YouTube and Vimeo videos.
 
     When user clicks on the insert video button

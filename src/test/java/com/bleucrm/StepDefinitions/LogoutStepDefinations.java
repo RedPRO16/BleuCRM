@@ -36,7 +36,7 @@ LogoutPage logoutPage = new LogoutPage();
 
     @When("User is away from the keyboard and mouse for three minutes")
     public void user_is_away_from_the_keyboard_and_mouse_for_three_minutes() {
-        BrowserUtils.waitFor(180);
+        BrowserUtils.waitFor(10);
 
     }
     @When("User represh the page")

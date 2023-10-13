@@ -15,7 +15,7 @@ Feature: As a user, I should be able to add link, insert video, mention,  quote,
     And user clicks on the send messages button
     Then user lands on the main page
 
-
+@LUE-1523
   Scenario: User should be able to add mentions
     When user clicks on the Add Mention button
     And user clicks on the Employees and Department Button
